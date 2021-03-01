@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Lista' /}
+
+<h1>Lista de cadastrados</h1>
+
+#{list items:lista,as:'u'}
+ 
+<h3>${u.nome}</h3>
+	
+	<p>
+		${u.email}<br> 
+		${u.Nascimento}
+	</p>
+
+<div>
+ 	<a href='@{Postagens.form(u.id)}'>Postar por esse Usuário</a>
+	| <a href='@{Usuarios.editar(u.id)}'>Editar</a>
+	<a href='@{Usuarios.deletar(u.id)}'>Deletar</a>
+</div>
+
+
+ 
+ #{/list}
+ #{else}
+ <li>Nenhum usuario cadastrado!!</li>
+ #{/else}
+ <ul></ul>
+ <a href="@{Usuarios.form}">Cadastrar novo usuario</a>
+ </br>
+ 
+
+ 
+ <a href="@{Application.index}">Sair</a>

@@ -1,0 +1,22 @@
+ #{extends 'main.html' /}
+#{set title:'Formulario' /}
+
+<h1>Cadastramento</h1>
+
+
+<form action= "@{Usuarios.salvar}">
+<inputj class="input py-5" type="hidden" name="usu.id" value="${usu?.id}"> <br/> 
+Nome: <input type="text" name="usu.nome" value ="${usu?.nome}"> <br/> 
+Email: <input type="text" name="usu.email" value = "${usu?.email}"> <br/> 
+
+senha: <input type="password" name="usu.senha"> <br/> 
+
+Ano Nascimento: <input type="text" name="usu.anoNascimento" value-"$(usu?.anoNascimento)"> <br/> 
+
+<button>Enviar</button>
+
+
+</form>
+
+<ul></ul>
+ <a href="@{Application.index}">Sair</a>

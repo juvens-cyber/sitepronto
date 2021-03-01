@@ -1,0 +1,28 @@
+#{extends 'main.html' /}
+#{set title:'Lista' /}
+
+<h1>Lista de posts</h1>
+
+#{list items:lista,as:'post'}
+ 
+<h3>${post.donoDaPostagem.nome}</h3>
+<li>${post.texto}</li>
+<div>
+
+<a href='@{Postagens.editar(post.id)}'>Editar ${post.donoDaPostagem.id}</a>
+<a href='@{Postagens.deletar(post.id)}'>Deletar</a><ul></ul>
+
+</div>
+
+<hr>
+
+#{/list}
+#{else}
+<li>Nenhuma postagem feita!!</li>
+#{/else}
+<ul></ul>
+ </br>
+ 
+
+ 
+ <a href="@{Application.index}">Sair</a>

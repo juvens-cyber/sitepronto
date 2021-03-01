@@ -1,0 +1,19 @@
+ #{extends 'main.html' /}
+#{set title:'Formulario' /}
+
+<h1>Postar</h1>
+
+
+<form action= "@{Postagens.salvar}">
+<input class="input py-5" type="hidden" name="post.id" value="${post?.id}"> <br/> 
+#{ifnot id}
+<input type="hidden" name="uid" value="${post.donoDaPostagem.id}"> <br/> 
+#{/ifnot}
+<input type="hidden" name="uid" value="${id}"> <br/> 
+Texto: <input type="text" name="post.texto" value = "${post?.texto}"> <br/> 
+
+<button>Enviar</button>
+</form>
+
+<ul></ul>
+ <a href="@{Application.index}">Sair</a>
