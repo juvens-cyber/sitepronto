@@ -15,7 +15,4 @@ public class Postagem extends Model {
 	@ManyToOne
 	@JoinColumn()
 	public Usuario donoDaPostagem;
-	
-	@OneToOne
-	public String tituloPostagem;
 }
